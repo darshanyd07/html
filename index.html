@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/j.js"></script> 
+    <link rel="stylesheet" href="css/style.css">
+   
+    <title>Minesweeper</title>
+</head>
+<body>
+    <div>
+        <div style="display: none;"  id="score_count"></div>
+        <div style="display: none;" id="timer">Timer</div>
+    </div>
+   
+    
+    <p class="gameTitle">💣 MINESWEEPER 💣</p>
+     
+    
+    <div id="button_div" style="display: none;"  ><button class="btn1" onclick="minesweeper.restartGame();">Restart</button>
+     <button onclick="minesweeper.gameInstruction();" class="btn1">Insrtuctions</button> </div>
+    <div class="wrapper" id="instructionBox">
+        <div class="ruleBox">
+            
+            <p>Game Insrtuctions</p>
+            <ol class="rules">
+                <li>Click "Play" to begin the game.</li>
+                <li>Use the numbers to determine where you know a bomb is.</li>
+                <li>Avoid all the bombs and expose all the empty spaces to win Minesweeper.</li>
+            </ol>
+            <button class="btn" id="startBtn" onclick="minesweeper.start_minesweeperGame();">Start Game</button>
+        </div>
+    </div>
+    
+    <div id="board"></div>
+
+    <div  style="display: none;" class="background_Layer" id="bg_Layer_win" onclick="minesweeper.pop_close();"  >
+        <div   class="upper_Layer" id="win_id"  >
+            <span class="close_button" id="close_pop" onclick="minesweeper.pop_close();" >X</span>
+            <div class="Container_win"><h2>You Win The Game...</h2> </div>
+        </div>    
+    </div>
+    <div  style="display: none;" class="background_Layer" id="bg_Layer_loss" onclick="minesweeper.pop_close();"  >
+        <div   class="upper_Layer" id="lost_id"  >
+            <span class="close_button" id="close_pop" onclick="minesweeper.pop_close();" >X</span>
+            <div class="Container_loss">You Loss The Game... <h2></h2> 
+            </div>
+        </div>    
+    </div>
+
+    <!-- <div class="pop_for_win" >
+        <h2>You Win The Game...</h2>  
+    </div> -->
+    
+       
+</body>
+</html>
